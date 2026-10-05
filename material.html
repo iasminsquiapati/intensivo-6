@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+ 
+<head>
+ 
+    <meta charset="UTF-8">
+ 
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+ 
+    <title>Navbar Material UI</title>
+ 
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+ 
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+ 
+    <script src="https://unpkg.com/@mui/material@5.15.20/umd/material-ui.development.js"></script>
+ 
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+ 
+</head>
+ 
+<body>
+ 
+    <div id="root"></div>
+ 
+ 
+    <script type="text/babel">
+ 
+        const {
+            AppBar,
+            Toolbar,
+            Typography,
+            Button,
+            Box
+        } = MaterialUI;
+ 
+ 
+        function App() {
+ 
+            return (
+ 
+                <div>
+ 
+                    <AppBar position="fixed">
+ 
+                        <Toolbar>
+ 
+                            <Typography
+                                variant="h6"
+                                sx={{ flexGrow: 1 }}
+                            >
+                                Meu Site
+                            </Typography>
+ 
+                            <Button color="inherit">
+                                Início
+                            </Button>
+ 
+                            <Button color="inherit">
+                                Sobre
+                            </Button>
+ 
+                            <Button color="inherit">
+                                Contato
+                            </Button>
+ 
+                        </Toolbar>
+ 
+                    </AppBar>
+ 
+ 
+                    <Box
+                        sx={{
+                            paddingTop: "100px",
+                            padding: 5
+                        }}
+                    >
+ 
+                        <Typography variant="h3">
+                            Meu Portfólio
+                        </Typography>
+ 
+                        <Typography sx={{ mt: 3 }}>
+                            Esta página possui uma barra de
+                            navegação fixa criada com Material UI.
+                        </Typography>
+ 
+                        <Typography sx={{ mt: 5 }}>
+                            Role a página para testar a barra fixa.
+                        </Typography>
+ 
+                        <div style={{ height: "1200px" }}></div>
+ 
+                    </Box>
+ 
+                </div>
+ 
+            );
+ 
+        }
+ 
+ 
+        const root = ReactDOM.createRoot(
+            document.getElementById("root")
+        );
+ 
+        root.render(<App />);
+ 
+    </script>
+ 
+</body>
+ 
+</html>
+ 

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+    <title>Modal com MUI</title>
+ 
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@mui/material@5.15.20/umd/material-ui.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+ 
+<body>
+ 
+    <div id="root"></div>
+ 
+    <script type="text/babel">
+ 
+        const {
+            Button,
+            Modal,
+            Box,
+            Typography
+        } = MaterialUI;
+ 
+        function App() {
+ 
+            const [aberto, setAberto] = React.useState(false);
+ 
+            return (
+                <div style={{
+                    textAlign: "center",
+                    marginTop: "100px"
+                }}>
+ 
+                    <Typography variant="h4">
+                        Modal com Material UI
+                    </Typography>
+ 
+                    <br />
+ 
+                    <Button
+                        variant="contained"
+                        onClick={() => setAberto(true)}
+                    >
+                        Abrir Modal
+                    </Button>
+ 
+                    <Modal
+                        open={aberto}
+                        onClose={() => setAberto(false)}
+                    >
+ 
+                        <Box sx={{
+                            position: "absolute",
+                            top: "50%",
+                            left: "50%",
+                            transform: "translate(-50%, -50%)",
+                            width: 400,
+                            bgcolor: "background.paper",
+                            boxShadow: 24,
+                            p: 4,
+                            borderRadius: 2
+                        }}>
+ 
+                            <Typography variant="h5">
+                                Olá!
+                            </Typography>
+ 
+                            <Typography sx={{ mt: 2 }}>
+                                Este é um modal criado utilizando a biblioteca MUI.
+                            </Typography>
+ 
+                            <Button
+                                variant="outlined"
+                                sx={{ mt: 3 }}
+                                onClick={() => setAberto(false)}
+                            >
+                                Fechar
+                            </Button>
+ 
+                        </Box>
+ 
+                    </Modal>
+ 
+                </div>
+            );
+        }
+ 
+        const root = ReactDOM.createRoot(
+            document.getElementById("root")
+        );
+ 
+        root.render(<App />);
+ 
+    </script>
+ 
+</body>
+</html>
+ 
